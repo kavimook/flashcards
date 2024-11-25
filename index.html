@@ -5,94 +5,28 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Persistant Flashcards</title>
-    <style> 
-    <!--Everything visible on a webpage, such as text, images, buttons, and other elements, should be inside the body tag-->
-        body {
-            font-family: Georgia, 'Times New Roman', Times, serif;
-            max-width: 600px;
-            margin: 30px auto;
-            padding: 20px;
-            background-color: #d985e8;
-        }
-        <!-- targets elements with the class container-->
-        .container {
-            background-color: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-
-        <!-- targets elements with the class input-group-->
-        .input-group {
-            display: flex;
-            gap: 10px;
-            margin-bottom: 20px;
-        }
-
-        <!-- targets elements with field input--ie text boxes-->
-        input {
-            flex: 1;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            font-size: 16px;
-        }
-
-        <!-- targets button elements-- I suppose that means objects which are buttons-->
-        button {
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 16px;
-        }
-
-        button:hover {
-            background-color: #d985e8;
-        }
-
-        flashcard-item {
-            display: flex;
-            justify-content: space-between;
-            padding: 10px;
-            margin: 5px 0;
-            background-color: #f9f9f9;
-            border-radius: 4px;
-            border: 1px solid #ddd;
-        }
-
-        .delete-btn {
-            background-color: #ff4444;
-            padding: 5px 10px;
-            font-size: 14px;
-        }
-
-        .delete-btn:hover {
-            background-color: #d985e8;
-        }
-
-        .flashcard-text {
-            flex: 1;
-            margin-right: 10px;
-        }
-
-        .completeted {
-            text-decoration: line-through;
-            color: #666;
-            background-color: #f0f0f0;
-        }
-
-        .stats {
-            margin-top: 20px;
-            padding-top: 20px;
-            border-top: 1px solid #ddd;
-            color: #666;
-        }
-        
-    </style>
+    <link rel="stylesheet" href="style.css"> 
 </head>
 <body>
-    
+    <div class="container">
+        <h1> These Little Jonathans</h1>
+
+        <div class="input-group">
+            <input type="text" id="flashcardsInput" placeholder="Add a new flashcard">
+            <button onclick="addFlashcard ()"> Add</button>
+        </div>
+
+        <div id="flashcardList">
+     <!-- Todo items will be added here -->
+        </div>
+
+        <div class="stats">
+            <p>Total items: <span id="totalCount">0</span></p>
+            <p>Completed: <span id="completedCount">0</span></p>
+        </div>
+    </div>
+
+    <script src="flashScript.js"></script>
 </body>
 </html>
+    
