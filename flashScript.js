@@ -19,7 +19,7 @@ function displayFlashcards() {
 
         const deleteBtn = document.createElement('button');
         deleteBtn.className = 'delete-btn';
-        deleteBtn.onclick () => deleteFlashcard(index);
+        deleteBtn.onclick = () => deleteFlashcard(index);
 
         flashcardItem.appendChild(flashcardText);
         flashcardItem.appendChild(deleteBtn);
