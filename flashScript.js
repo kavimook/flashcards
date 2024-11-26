@@ -53,13 +53,13 @@ function addFlashcard() {
 
 // Delete flashcard 
 function deleteFlashcard(index) {
-    flashcard.splice(index, 1);
+    flashcards.splice(index, 1);
     localStorage.setItem('flashcards', JSON.stringify(flashcards));
     displayFlashcards();
 }
 
 // Update statistics
-function upsdateStats() {
+function updateStats() {
     document.getElementById('totalCount').textContent = flashcards.length;
 
     document.getElementById('completedCount').textContent = flashcards.filter(flashcard => flashcard.completed).length;
