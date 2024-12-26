@@ -2,12 +2,12 @@ let flashcards = JSON.parse(localStorage.getItem('flashcards')) || [];
 
 // display existing flashcards
 function displayFlashcards() {
-    const flashcardList = document.getElementById('todoList');
+    const flashcardList = document.getElementById('flashcardList');
     flashcardList.innerHTML = ''; // clear current display
 
-    flashcards.forEach((todo, index) => {
+    flashcards.forEach((flashcard, index) => {
         const flashcardItem = document.createElement('div');
-        flashcardItem.className = `todo-item${todo.completed ?'completed' : ''}`;
+        flashcardItem.className = `flashcard-item${flashcard.completed ?'completed' : ''}`;
         
         const flashcardText = document.createElement('span');
         flashcardText.className = 'flashcard-text';
@@ -19,6 +19,7 @@ function displayFlashcards() {
 
         const deleteBtn = document.createElement('button');
         deleteBtn.className = 'delete-btn';
+        deleteBtn.textContent = 'X';  // Add this line
         deleteBtn.onclick = () => deleteFlashcard(index);
 
         flashcardItem.appendChild(flashcardText);
